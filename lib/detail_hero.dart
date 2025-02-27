@@ -1,18 +1,18 @@
 import 'dart:ui';
 
-import 'package:hero_mlbb/book.dart';
+import 'package:hero_mlbb/pahlawan.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  final Book book;
-  const DetailPage({super.key, required this.book});
+  final Pahlawan pahlawan;
+  const DetailPage({super.key, required this.pahlawan});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          book.name,
+          pahlawan.name,
         ),
         backgroundColor: Colors.orangeAccent,
       ),
@@ -23,14 +23,14 @@ class DetailPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 3,
             decoration: BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage(book.image),
+              image: AssetImage(pahlawan.image),
               fit: BoxFit.cover,
             )),
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
               child: Center(
                 child: Image.asset(
-                  book.image,
+                  pahlawan.image,
                   width: 130,
                 ),
               ),
@@ -42,7 +42,7 @@ class DetailPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Text(
-                book.name,
+                pahlawan.name,
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
@@ -54,16 +54,16 @@ class DetailPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              bookInfo(
-                book.rate.toString(),
+              pahlawanInfo(
+                pahlawan.rate.toString(),
                 "Rating",
               ),
-              bookInfo(
-                book.page.toString(),
+              pahlawanInfo(
+                pahlawan.page.toString(),
                 "Page",
               ),
-              bookInfo(
-                book.language.toString(),
+              pahlawanInfo(
+                pahlawan.language.toString(),
                 "Language",
               ),
             ],
@@ -80,8 +80,8 @@ class DetailPage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: bookDesc(
-              book.description,
+            child: pahlawanDesc(
+              pahlawan.description,
             ),
           ),
         ],
@@ -89,7 +89,7 @@ class DetailPage extends StatelessWidget {
     );
   }
 
-  Widget bookInfo(String value, String info) {
+  Widget pahlawanInfo(String value, String info) {
     return Column(
       children: [
         Text(
@@ -107,7 +107,7 @@ class DetailPage extends StatelessWidget {
     );
   }
 
-  Widget bookDesc(String desc) {
+  Widget pahlawanDesc(String desc) {
     return Column(
       children: [
         Text(
