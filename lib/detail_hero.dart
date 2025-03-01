@@ -40,12 +40,24 @@ class DetailPage extends StatelessWidget {
 
           Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: Text(
                 pahlawan.name,
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: Text(
+                pahlawan.heroName,
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.blueGrey,
                 ),
               ),
             ),

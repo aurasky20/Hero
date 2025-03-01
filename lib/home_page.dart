@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           // Background
           Container(
-            color: const Color.fromARGB(255, 231, 234, 240),
+            color: const Color.fromARGB(255, 22, 25, 41),
           ),
           // Konten dengan efek scroll
           CustomScrollView(
@@ -62,16 +62,18 @@ class _HomePageState extends State<HomePage> {
 
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+                  padding: const EdgeInsets.only(top: 15, left: 15, right: 15, bottom: 50),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 10.0),
-                        child: Text(
-                          "Daftar Hero MLBB",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w600,),
+                        child: Center(
+                          child: Text(
+                            "Daftar Hero MLBB",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w600, color: Color.fromARGB(255, 255, 240, 194)),
+                          ),
                         ),
                       ),
                       ListView.builder(
@@ -85,16 +87,14 @@ class _HomePageState extends State<HomePage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      DetailPage(pahlawan: pahlawan),
+                                  builder: (context) => DetailPage(pahlawan: pahlawan),
                                 ),
                               );
                             },
                             child: Container(
                               width: double.infinity,
                               height: 90.0,
-                              // padding: const EdgeInsets.all(8.0),
-                              margin: const EdgeInsets.only(bottom: 10.0),
+                              margin: const EdgeInsets.only(bottom: 12.0),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10.0),
@@ -112,14 +112,14 @@ class _HomePageState extends State<HomePage> {
                                     borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(10), 
                                       bottomLeft: Radius.circular(10),
-                                    ), // Membuat border hanya di kiri
+                                    ),
                                     child: Image.asset(
                                       pahlawan.image,
-                                      width: 60, // Atur lebar agar gambar tidak terlalu kecil
-                                      fit: BoxFit.cover, // Memastikan gambar penuh di container
+                                      width: 60,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
-                                  const SizedBox(width: 20), // Jarak antara gambar dan teks
+                                  const SizedBox(width: 20),
                                   Expanded(
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -127,8 +127,7 @@ class _HomePageState extends State<HomePage> {
                                       children: [
                                         Text(
                                           pahlawan.name,
-                                          style: const TextStyle(
-                                              fontSize: 20, fontWeight: FontWeight.w600),
+                                          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                                         ),
                                         Text(
                                           pahlawan.heroName,
@@ -145,7 +144,6 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ],
                               ),
-
                             ),
                           );
                         },
