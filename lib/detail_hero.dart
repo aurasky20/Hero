@@ -12,9 +12,9 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          pahlawan.name,
+          pahlawan.name, style: TextStyle(color: Colors.white)
         ),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color.fromARGB(255, 17, 19, 67),
       ),
       body: ListView(
         children: [
@@ -50,20 +50,20 @@ class DetailPage extends StatelessWidget {
               ),
             ),
           ),
-          // Deskripsi Buku
+          // Deskripsi Hero
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               pahlawanInfo(
-                pahlawan.rate.toString(),
+                pahlawan.skill1.toString(),
                 "Rating",
               ),
               pahlawanInfo(
-                pahlawan.page.toString(),
+                pahlawan.skill2.toString(),
                 "Page",
               ),
               pahlawanInfo(
-                pahlawan.language.toString(),
+                pahlawan.ulti.toString(),
                 "Language",
               ),
             ],
