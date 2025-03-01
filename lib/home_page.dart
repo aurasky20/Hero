@@ -31,7 +31,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: [
-
+          // Background
+          Container(
+            color: const Color.fromARGB(255, 231, 234, 240),
+          ),
           // Konten dengan efek scroll
           CustomScrollView(
             controller: _scrollController,
@@ -41,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 expandedHeight: 250.0,
                 floating: false,
                 pinned: true,
-                backgroundColor: const Color.fromARGB(255, 24, 22, 47),
+                backgroundColor: const Color.fromARGB(255, 26, 33, 79),
                 title: _opacity == 0
                     ? const Text(
                         "Home Page",
@@ -59,7 +62,7 @@ class _HomePageState extends State<HomePage> {
 
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -68,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           "Daftar Hero MLBB",
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w600),
+                              fontSize: 20, fontWeight: FontWeight.w600,),
                         ),
                       ),
                       ListView.builder(

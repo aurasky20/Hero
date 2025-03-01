@@ -54,24 +54,15 @@ class DetailPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              pahlawanInfo(
-                pahlawan.skill1.toString(),
-                "Rating",
-              ),
-              pahlawanInfo(
-                pahlawan.skill2.toString(),
-                "Page",
-              ),
-              pahlawanInfo(
-                pahlawan.ulti.toString(),
-                "Language",
-              ),
+              pahlawanInfo(pahlawan.skill1.toString(), "Skill 1"), 
+              pahlawanInfo(pahlawan.skill2.toString(), "Skill 2"),
+              pahlawanInfo(pahlawan.ulti.toString(), "Ultimate"),
             ],
           ),
-
+          const SizedBox(height: 20),
           //Deskripsi
           const Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(left: 20, right: 20, top: 20),
             child: Text("Deskripsi",
                 style: TextStyle(
                   fontSize: 20,
@@ -79,7 +70,7 @@ class DetailPage extends StatelessWidget {
                 )),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 50),
             child: pahlawanDesc(
               pahlawan.description,
             ),
@@ -92,18 +83,18 @@ class DetailPage extends StatelessWidget {
   Widget pahlawanInfo(String value, String info) {
     return Column(
       children: [
-        Text(
+        Image.asset(
           value,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
+          width: 75,
+          height: 75,
+          fit: BoxFit.cover, // Menyesuaikan gambar dengan ukuran tanpa merusaknya
         ),
+        const SizedBox(height: 5),
         Text(
           info,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
-      ],
+    ],
     );
   }
 
